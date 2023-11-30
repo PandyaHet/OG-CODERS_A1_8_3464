@@ -2,13 +2,33 @@ public class Manager extends Employee{
     private int traveledDays;
     private int newClients;
 
-    public Manager(String name, int birthYear, double monthlyIncome, double occupationRate,
-                   int traveledDays, int newClients) {
-        super(name, birthYear, monthlyIncome, occupationRate);
+    private Vehicle vehicle;
+
+
+    public Manager(String name, int birthYear, int newClients,int traveledDays, double occupationRate) {
+        super(name, birthYear, occupationRate,EmployeeType.Manager);
+        this.traveledDays = traveledDays;
+        this.newClients = newClients;
+    }
+    public Manager(String name, int birthYear, int newClients,int traveledDays, double occupationRate,Vehicle vehicle) {
+        super(name, birthYear, occupationRate,EmployeeType.Manager);
+        this.traveledDays = traveledDays;
+        this.newClients = newClients;
+        this.vehicle = vehicle;
+    }
+
+    public Manager(String name, int birthYear, int newClients,int traveledDays) {
+        super(name, birthYear, 0,EmployeeType.Manager);
         this.traveledDays = traveledDays;
         this.newClients = newClients;
     }
 
+    public Manager(String name, int birthYear, int newClients,int traveledDays,Vehicle vehicle) {
+        super(name, birthYear, 0,EmployeeType.Manager);
+        this.traveledDays = traveledDays;
+        this.newClients = newClients;
+        this.vehicle = vehicle;
+    }
     public int getTraveledDays() {
         return traveledDays;
     }
@@ -19,6 +39,6 @@ public class Manager extends Employee{
 
     @Override
     public String toString() {
-        return super.toString() + ", traveledDays=" + traveledDays + ", newClients=" + newClients;
+        return super.toString() + "\n - TraveledDays :" + traveledDays + "\n - NewClients :" + newClients + vehicle.toString();
     }
 }
