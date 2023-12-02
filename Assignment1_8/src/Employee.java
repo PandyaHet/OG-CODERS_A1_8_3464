@@ -31,10 +31,6 @@ public class Employee {
     private static final double GAIN_FACTOR_TRAVEL = 100;
     private static final double GAIN_FACTOR_ERROR = 10;
     private static final double GAIN_FACTOR_PROJECTS = 200;
-
-//    private ContractType contractType;
-
-    // Additional attributes for permanent employees
     private int daysWorkedInMonth;
     private double fixedMonthlySalary;
     private int numberOfChildren;

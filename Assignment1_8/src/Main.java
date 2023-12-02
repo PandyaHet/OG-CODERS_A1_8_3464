@@ -7,21 +7,18 @@ public class Main {
         System.out.println("Employees description: ");
         management.hireTest2();
 
-        // Example demonstrating contract changes and accumulated salary calculation
-        Employee employee = management.getEmployees().get(0); // Get the first employee (adjust index as needed)
+        Employee employee = management.getEmployees().get(0);
 
-        // Assuming changing contract from temporary to permanent for demonstration
         int daysWorked = 15;
         double monthlySalary = 5000;
         int children = 1;
         boolean married = true;
         double childrenPremium = 450;
-        double hourlyWage = 30; // Example hourly wage for temporary contract
-        double hoursWorked = 100; // Example hours worked for temporary contract
+        double hourlyWage = 30;
+        double hoursWorked = 100;
 
         employee.convertToPermanent(daysWorked, monthlySalary, children, married, childrenPremium);
 
-        // Calculate and display the accumulated salary after the contract change
         double newAccumulatedSalary = employee.accumulatedSalary();
         System.out.println("Accumulated Salary after contract change: $" + newAccumulatedSalary);
     }

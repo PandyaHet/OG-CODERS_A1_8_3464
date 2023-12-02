@@ -11,22 +11,15 @@ public class Management {
     List<Employee> employees = new ArrayList<>();
 
 
-    // constructor for Motorcycle
-    // make, plate, color, category, sidecar
     Motorcycle m1 = new Motorcycle("Kawasaki", "Custom Plate", "Yellow", VehicleCategory.RACE, false);
     Motorcycle m2 = new Motorcycle("Honda", "Custom Plate", "Black", VehicleCategory.NOT_FOR_RACE, true);
 
-    // constructor for Car
-    // make, plate, color, category, gear, type
     Car vt1 = new Car("Lamborghini", "Custom Plate", "White", VehicleCategory.FAMILY, GearType.MANUAL, CarType.SPORT);
     Car vt2 = new Car("BMW", "Custom Plate", "Black", VehicleCategory.FAMILY, GearType.AUTOMATIC, CarType.SEDAN);
     Car vt3 = new Car("Renault Clio", "Custom Plate", "Blue", VehicleCategory.FAMILY, GearType.MANUAL, CarType.HATCHBACK);
     Car vt4 = new Car("Mazda", "Custom Plate", "White", VehicleCategory.FAMILY, GearType.AUTOMATIC, CarType.SUV);
 
-    //    Employee constructors
-    // Manager: name, birthYear, nbClients, nbTravelDays, rate
-    // Programmer: name, birthYear, nbProjects, rate
-    // Tester: name, birthYear, nbBugs, rate
+
     void hireTest1() {
         employees.add(new Manager("Serge", 1985, 30, 4));
         employees.add(new Manager("Cindy", 1974, 20, 6, 80));
@@ -40,18 +33,12 @@ public class Management {
         return employees;
     }
 
-    //    Employee constructors
-    // Manager: name, birthYear, nbClients, nbTravelDays, rate, employeeVehicle
-    // Programmer: name, birthYear, nbProjects, rate, employeeVehicle
-    // Tester: name, birthYear, nbBugs, rate, employeeVehicle
     void hireTest2() {
-//        employees.clear();
         if (!employees.isEmpty()) {
 
-            Employee employee = employees.get(0); // Get the first employee (you can choose any index)
-            double accumulatedSalaryBeforeChange = employee.accumulatedSalary(); // Get the accumulated salary before contract change
+            Employee employee = employees.get(0);
+            double accumulatedSalaryBeforeChange = employee.accumulatedSalary();
 
-            // Assuming the employee wants to change the contract from temporary to permanent
             int daysWorked = 15;
             double monthlySalary = 5000;
             int children = 1;
@@ -60,7 +47,6 @@ public class Management {
             double hourlyWage = 30; // Example hourly wage for temporary contract
             double hoursWorked = 100; // Example hours worked for temporary contract
 
-            // Calculate accumulated salary after changing the contract
             double newAccumulatedSalary = employee.calculateAccumulatedSalaryWhenChangingContract(
                     Employee.ContractType.PERMANENT, daysWorked, monthlySalary, children, married,
                     childrenPremium, hourlyWage, hoursWorked);
